@@ -1,0 +1,25 @@
+/*! 🐉 404.css | MIT License */
+/* 1reset.css */
+
+*,
+*::before,
+*::after {
+  /* box-sizing: inherit; */
+  margin: 0;
+  padding: 0;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  height: 100svh;
+  min-height: 100dvh; /*  🐉 ENSURES IT ADAPTS DYNAMICALLY */
+  font-size: 100%;
+}
+
+img {
+  content-visibility: auto;
+}

@@ -1,0 +1,61 @@
+/*! 🐉 404.css | MIT License */
+/* 1vars.css */
+
+:root {
+  /* Extract common variables from theme.css to create a dedicated vars layer */
+  /* GENERAL VARIABLES */
+  --tap_size: 38px;
+  --ease_out: cubic-bezier(0.22, 1, 0.36, 1);
+  --radius: 0.25rem;
+  --sticky_header_height): 60px;
+
+  /* SPACING AND LAYOUT */
+  --breath: clamp(15px, 4.2svw, 50px);
+
+  /* Breakpoints */
+  --bp_sm: 576px;
+  --bp_md: 768px;
+  --bp_lg: 992px;
+  --bp_xl: 1200px;
+
+  /* Container widths calculated from breakpoints */
+  --container_sm: calc(var(--bp_sm) - var(--breath) * 2);
+  --container_md: calc(var(--bp_md) - var(--breath) * 2);
+  --container_lg: calc(var(--bp_lg) - var(--breath) * 2);
+  --container_xl: calc(var(--bp_xl) - var(--breath) * 2);
+
+  /* TYPOGRAPHY */
+  --font_serif: "Courier New", Courier, monospace;
+  --font_family:
+    system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu,
+    "Helvetica Neue", sans-serif;
+  --line_height: 1.5;
+  --font_size: clamp(1.1rem, 0.34vw + 0.92rem, 1.21rem);
+
+  /* FONT WEIGHTS TOKENS - Use modern naming */
+  --weight_400: 400;
+  --weight_500: 500;
+  --weight_600: 600;
+  --weight_700: 700;
+  --weight_800: 800;
+
+  /* Legacy weight names for backward compatibility */
+  --weight_thin: var(--weight_400);
+  --weight_light: var(--weight_500);
+  --weight_regular: var(--weight_600);
+  --weight_medium: var(--weight_700);
+  --weight_bold: var(--weight_800);
+
+  /* SPACING */
+  --space_unit: 0.325rem;
+  --space: clamp(
+    var(--space_unit),
+    calc(var(--space_unit) + 0.38dvw),
+    calc(var(--space_unit) * 3)
+  );
+
+  /* Common variables */
+  --border: 1px;
+  --transition: 200ms ease-out;
+  --text_decoration: none;
+}

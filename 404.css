@@ -1,0 +1,31 @@
+/*!
+ * 🐉 404.css v1.0.0-RC2
+ * https://github.com/junglesta/404
+ *
+ * Copyright (c) 2024–2025 Toybreaker
+ * Released under the MIT License
+ */
+
+/*
+🐉 404.css is an unknown modern CSS framework.
+Implementing issues gone 404. SMILING DX!
+Paired with Astro's scoped styling, for example,
+Cascade nightmares and specificity wars, 404, not found!
+*/
+
+/* 🐉 ROK THE BOAT FIRST: RESET  */
+@import url(omg/0reset.css) layer(reset);
+@import url(omg/1vars.css) layer(var);
+/* 🐉 THEME LAYER - Project specific */
+/* 🐉 DEVs NEED TO TOUCH JUST THIS FILE MOSTLY */
+@import url(omg/2theme.css) layer(theme);
+/* 🐉 BASE LAYER - MAIN ELEMENTS DEFAULTS */
+@import url(omg/3base.css) layer(base);
+@import url(omg/4layout.css) layer(layout);
+/* 🐉 COMPO LAYER - HTML COMPONENT DEFAULTS */
+@import url(omg/5components.css) layer(components);
+@import url(omg/6states.css) layer(layout);
+@import url(omg/7utilities.css) layer(utilities);
+
+/* 🐉 CASCADING ORDER */
+@layer reset, vars, theme, base, layout, components, states, utilities;

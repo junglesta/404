@@ -1,0 +1,89 @@
+/*! 🐉 404.css | MIT License */
+/* 5components.css */
+
+/* LAYOUT BUTTON */
+button,
+input[type="submit"],
+input[type="button"],
+input[type="reset"],
+[role="button"] {
+  --background_color: var(--primary);
+  --border_color: var(--primary);
+  --color: var(--primary_inverse);
+
+  padding: var(--space) var(--space);
+  border: var(--border) solid var(--border_color);
+  border-radius: var(--radius);
+  outline: none;
+  background-color: var(--background_color);
+  color: var(--color);
+  font-weight: var(--weight_light);
+  font-size: 1rem;
+  line-height: var(--line_height);
+  text-align: center;
+  cursor: pointer;
+  transition:
+    background-color var(--transition),
+    border-color var(--transition),
+    color var(--transition),
+    box-shadow var(--transition);
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space);
+  padding: var(--space) var(--space_unit_2);
+  background: var(--primary);
+  color: var(--surface);
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: transform 0.2s var(--ease_out);
+}
+
+.button:hover,
+button:hover {
+  transform: translateY(-1px);
+  background: oklch(from var(--primary) calc(l - 0.1) c h);
+}
+
+a,
+[role="link"] {
+  --color: var(--primary);
+  --background_color: transparent;
+  outline: none;
+  background-color: var(--background_color);
+  color: var(--color);
+  text-decoration: var(--text_decoration);
+  transition:
+    background-color var(--transition),
+    color var(--transition),
+    text-decoration var(--transition),
+    box-shadow var(--transition);
+}
+/* Override text decoration for buttons inside links */
+a button,
+a [role="button"],
+a input[type="submit"],
+a input[type="button"],
+a input[type="reset"] {
+  text-decoration: none;
+}
+
+/* Preserve original SVG rule */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* STICKY HEADER COMPONENT  */
+.controls {
+  height: var(--sticky_header_height);
+  min-height: var(--sticky_header_height);
+  max-height: var(--sticky_header_height);
+}
+.controls.sticky {
+  position: sticky;
+  top: 0;
+  z-index: 20; /* or whatever keeps it on top */
+}

@@ -1,0 +1,466 @@
+/*! 🐉 404.css | MIT License */
+/* 2theme.css |< DEFAULT name. Customized here >*/
+/* 2025 STYLES SYSTEM FOR CASASIA & DIVINO */
+
+/* INITIAL SETTINGS  */
+:root {
+  /* COLOURS | NOT CHANGING WITH LIGHT DARK MODE */
+  --surface_delivery: oklch(71% 0.088 86);
+  --surface_restaurant: oklch(83% 0.088 86);
+  --surface_tagpage: oklch(0.94 0.05 85.78);
+  --black: oklch(0% 0.01 0);
+  --blackT25: color-mix(in oklab, var(--black), transparent 75%);
+  --blackT50: color-mix(in oklab, var(--black), transparent 50%);
+  --white: oklch(100% 0.01 0);
+  --whiteT25: color-mix(in oklab, var(--white), transparent 75%);
+  --whiteT50: color-mix(in oklab, var(--white), transparent 50%);
+  --ocean: oklch(0.76 0.13 200);
+  /* BRAND | NOT CHANGING WITH LIGHT DARK MODE */
+  --brand: oklch(0.55 0.19 28);
+  /* BRAND | DERIVATES */
+  --brandT25: color-mix(in oklab, var(--brand), transparent 75%);
+  --brandT50: color-mix(in oklab, var(--brand), transparent 50%);
+  --brand_lighter: oklch(from var(--brand) calc(l + 0.03) c h);
+  --brand_darker: oklch(from var(--brand) calc(l - 0.18) c h);
+
+  /* LANGUAGE DRIVEN CHROMA TUNING */
+  /* RUSSIAN TUNDRA STYLE */
+  --surface_deliveryRU: oklch(70% 0.5 86);
+  --surface_restaurantRU: oklch(80% 0.5 86);
+  --surface_tagpageRU: oklch(75% 0.5 86);
+} /* COLOURS, LIGHT THEME (DEFAULT) */
+
+/*
+404 uses some DYMANIC COLOURS VARIABLES:
+logo, surface, text, primary, primary_inverse.
+So the rest of the 404 code will simply use those
+and forget of dark light modes
+*/
+
+:root,
+[data-theme="light"] {
+  --logo: var(--black);
+  --surface: var(--white);
+  --surface_inverse: var(--black);
+  --surfaceT25: var(--whiteT25);
+  --surface_inverseT25: var(--blackT25);
+  --text: var(--black);
+  --textT50: var(--blackT50);
+  --primary: var(--brand);
+  --primary_inverse: var(--black);
+  --primary_hover: var(--brand_lighter);
+  --contrast: var(--brand_darker);
+}
+
+/* COLOURS, DARK THEME - OS PREFERENCE */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --logo: var(--white);
+    --surface: var(--black);
+    --surface_inverse: var(--white);
+    --surfaceT25: var(--blackT25);
+    --surface_inverseT25: var(--whiteT25);
+    --text: var(--white);
+    --textT50: var(--whiteT50);
+    --primary: var(--brand_lighter);
+    --primary_inverse: var(--white);
+    --primary_hover: var(--brand);
+    --contrast: var(--brand_lighter);
+
+    /* --weight_thin: 300;
+    --weight_light: 400;
+    --weight_regular: 500;
+    --weight_medium: 600;
+    --weight_bold: 700; */
+  }
+}
+
+/* COLOURS, DARK THEME - MANUAL OVERRIDE */
+[data-theme="dark"] {
+  --logo: var(--white);
+  --surface: var(--black);
+  --surface_inverse: var(--white);
+  --surfaceT25: var(--blackT25);
+  --surface_inverseT25: var(--whiteT25);
+  --text: var(--white);
+  --textT50: var(--whiteT50);
+  --primary: var(--brand_lighter);
+  --primary_inverse: var(--white);
+  --primary_hover: var(--brand);
+  --contrast: var(--brand_lighter);
+
+  /* --weight_thin: 300;
+  --weight_light: 400;
+  --weight_regular: 500;
+  --weight_medium: 600;
+  --weight_bold: 700; */
+}
+
+/*
+  OTHER THEME STUFF
+  */
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  line-height: var(--line_height);
+  font-weight: var(--weight_light);
+}
+body > header,
+body > main,
+body > footer {
+  width: 100%;
+  margin-inline: auto;
+  line-height: var(--line_height);
+}
+footer svg {
+  /* max */
+  max-width: 48px;
+  max-height: 48px;
+  /* variable */
+  width: 2.35rem;
+  height: 2.35rem;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  .svg_fill_current {
+    fill: currentColor;
+  }
+}
+
+hr {
+  color: var(--surface_inverseT25);
+  border: 0 none;
+  border-top: 0.5px var(--text) solid;
+  opacity: 50%;
+}
+
+nav {
+  padding: 0;
+  display: flex;
+  justify-content: center !important;
+}
+
+blockquote {
+  display: block;
+  margin: calc(var(--space) * 8) calc(var(--space) * 4);
+  padding: var(--space);
+  border-right: none;
+  border-left: 4px solid var(--surface_inverseT25);
+  line-height: 1.2;
+  font-size: 120%;
+  font-style: italic;
+  text-align: left;
+}
+/* 🐉 ELEMENT WAY TO USE CITE */
+/* cite {
+  padding-top: var(--space);
+  display: block;
+  font-size: 66%;
+} */
+
+/* 🐉 ATTRIBUTE WAY TO USE cite */
+blockquote::after:not(empty) {
+  display: inline;
+  content: " ＿ " attr(cite) " ";
+  /* color: var(--textT50); */
+  font-size: 66%;
+  text-wrap: stable;
+}
+
+ol,
+ul {
+  list-style: none !important;
+  list-style-type: none !important;
+}
+
+li::marker {
+  display: none !important;
+}
+
+main:not(.vertical) {
+  font-family: var(--font_serif);
+  font-weight: var(--weight_medium);
+}
+.is_accommodation_page {
+  h3 {
+    padding-block: calc(var(--space) * 5);
+  }
+}
+.menu_item {
+  min-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: calc(var(--space));
+  border-radius: var(--radius);
+  margin-bottom: var(--space);
+}
+
+main {
+  .menu_item {
+    background-color: var(--whiteT50);
+  }
+}
+
+main .menu_item > * {
+  color: black;
+}
+
+.brand_name {
+  position: absolute;
+  top: -10000px;
+  user-select: none;
+  left: -10000px;
+}
+
+header {
+  user-select: none;
+
+  .container {
+    padding-top: calc(var(--space) * 6);
+    margin-top: 0;
+  }
+  h2 {
+    font-size: calc(var(--font_size) * 1.8);
+  }
+  a {
+    min-height: var(--tap_size);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+header a:focus {
+  --background-color: transparent;
+}
+
+.menu.container {
+  padding-bottom: calc(var(--space) * 10);
+}
+
+.logo {
+  display: block;
+  width: auto;
+  padding-bottom: var(--space);
+}
+
+.toc {
+  padding-block: var(--space);
+  a {
+    font-size: 120% !important;
+    padding-block: var(--space);
+    display: block;
+    text-transform: uppercase;
+  }
+}
+
+.contrast_link,
+.contrast_link figcaption {
+  display: block;
+  min-height: var(--tap_size);
+  line-height: var(--tap_size);
+  margin-bottom: var(--space);
+  vertical-align: middle;
+  text-transform: uppercase;
+  color: var(--contrast) !important;
+}
+
+strong {
+  font-weight: var(--weight_bold);
+}
+
+p {
+  padding-block: var(--space);
+  font-weight: var(--weight_light);
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  user-select: none;
+  font-weight: var(--weight_light);
+  line-height: 1.5;
+}
+
+.extras,
+.notes,
+.changes {
+  color: black;
+  margin-bottom: var(--space);
+  padding: 5px 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: var(--radius);
+  text-transform: uppercase;
+  padding-inline: var(--space);
+}
+
+.extra_title {
+  display: block;
+  color: black;
+  text-align: right;
+}
+
+.extras .extra_title,
+.notes .extra_title,
+.changes .extra_title {
+  padding-top: calc(2 * var(--space));
+  padding-bottom: calc(1 * var(--space));
+  padding-inline: calc(2 * var(--space));
+  text-align: right;
+  display: block;
+  color: black;
+}
+
+.extras .extra,
+.notes .extra,
+.changes .extra {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: calc(2 * var(--space));
+  padding-bottom: var(--space);
+  margin-inline: 1rem;
+}
+
+.changes .extra {
+  display: grid;
+  grid-template-columns: auto 100px;
+
+  .text {
+    justify-self: stretch;
+  }
+  .price {
+    justify-self: end;
+  }
+}
+.border_top {
+  border-top: 1px solid rgba(87, 67, 67, 0.25);
+}
+
+.extras {
+  padding-bottom: 0.35rem;
+  .extra {
+    border-top: 1px solid rgba(87, 67, 67, 0.25);
+  }
+}
+
+.changes_block {
+  display: none;
+  &.hasChanges {
+    display: block !important;
+  }
+}
+
+[lang="en"] {
+  .lang_it,
+  .lang_id {
+    display: none;
+  }
+}
+[lang="it"] {
+  .lang_en,
+  .lang_id {
+    display: none;
+  }
+}
+[lang="id"] {
+  .lang_it,
+  .lang_en {
+    display: none;
+  }
+}
+
+section .container h3 {
+  padding-top: calc(var(--space) * 10);
+  border-bottom: 1px solid var(--textT50);
+  margin-bottom: calc(var(--space) * 3);
+  text-align: right;
+  text-wrap: balance;
+}
+
+.container {
+  h3 {
+    /* 🐉 LETS MAKE IT WRAPPING PRETTY! */
+    text-align: center;
+    text-wrap: pretty;
+  }
+  p {
+    max-width: 60ch;
+    margin-inline: auto;
+    text-align: left;
+    text-wrap: pretty;
+
+    .center,
+    .centre,
+    .centered {
+      /* 🐉 LETS MAKE IT WRAPPING PRETTY! */
+      text-align: center;
+      text-wrap: pretty;
+    }
+  }
+}
+
+.map {
+  max-width: 550px;
+}
+
+.clipped-circle {
+  clip-path: circle(50px at center); /* radius at position */
+}
+
+/* CONTENT MARKDOWN RELATED STYLES */
+
+.eatpost,
+.content__post--eat /* 🐉 BEM NEW NAMING... Yo! */ {
+  summary {
+    cursor: pointer;
+    &::marker {
+      display: none;
+      content: "";
+    }
+    &:after {
+      content: "Read more >>>";
+      font-weight: var(--weight_light);
+      position: relative;
+      top: calc(var(--space) * 3);
+    }
+  }
+
+  details[open] summary:after {
+    content: "";
+    display: none;
+  }
+}
+
+section .hero ~ a {
+  display: grid;
+}
+section .hero ~ h3 {
+  background-color: transparent !important;
+  z-index: 100;
+}
+
+a[href*="https://wa.me/"],
+p > a {
+  color: var(--text) !important;
+  font-weight: var(--weight_bold);
+  /* text-decoration: underline;
+  text-decoration-thickness: 2px !important; */
+  /* text-underline-offset: 0.75ch; */
+  /* text-decoration-color: var(--text); */
+}

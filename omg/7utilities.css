@@ -1,0 +1,201 @@
+/*! 🐉 404.css | MIT License */
+/* 7utilities.css - Consolidated Aspect Ratio System */
+
+/* Visually hidden utility */
+.visually_hidden,
+.sr_only {
+  position: fixed;
+  overflow: hidden;
+  top: -100vw;
+  left: -100vw;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(100%);
+  white-space: nowrap;
+  border: 0;
+  white-space: nowrap;
+  user-select: none;
+}
+
+/* Fix duplicate classes */
+.top_padding {
+  padding-top: var(--space);
+}
+
+/* ---------------------------------------- */
+/* UNIFIED ASPECT RATIO SYSTEM */
+/* ---------------------------------------- */
+
+/* Base container for all aspect ratio elements */
+.aspect,
+.aspect_container {
+  position: relative;
+  width: 100%;
+
+  /* Add hover effect from aspect_container */
+  &:hover {
+    opacity: 0.95;
+  }
+
+  &:active {
+    transform: scale(0.985);
+  }
+
+  /* Media placement and sizing */
+  & > img,
+  & > video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Caption styling */
+  & > .caption {
+    padding: 0.5rem;
+    background: rgba(0, 0, 0, 0.5);
+    color: var(--text);
+  }
+}
+
+/* Dynamic ratio using CSS variables */
+.aspect[style*="--ratio"],
+.aspect_container[style*="--ratio"] {
+  aspect-ratio: var(--ratio);
+}
+
+/* Standard aspect ratios - Modern naming convention */
+.ratio_1x1,
+.aspect1_1 {
+  --ratio: 1 / 1;
+  aspect-ratio: 1 / 1;
+}
+
+.ratio_4x3,
+.aspect4_3 {
+  --ratio: 4 / 3;
+  aspect-ratio: 4 / 3;
+}
+
+.ratio_16x9,
+.aspect16_9 {
+  --ratio: 16 / 9;
+  aspect-ratio: 16 / 9;
+}
+
+.ratio_21x9,
+.aspect21_9 {
+  --ratio: 21 / 9;
+  aspect-ratio: 21 / 9;
+}
+
+/* Specialized ratios */
+.aspect_cinema,
+.aspect_cinemascope {
+  aspect-ratio: 2.35 / 1;
+}
+
+/* Clip path variations */
+.clip_none > img {
+  clip-path: none;
+}
+
+.clip_letterbox > img {
+  clip-path: inset(15% 0);
+}
+
+.clip_pillarbox > img {
+  clip-path: inset(0 15%);
+}
+
+.clip_custom > img {
+  clip-path: inset(10% 5% 10% 5%);
+}
+
+/* Object position utilities */
+.focus_center > img {
+  object-position: center;
+}
+
+.focus_top > img {
+  object-position: top;
+}
+
+.focus_bottom > img {
+  object-position: bottom;
+}
+
+.focus_left > img {
+  object-position: left;
+}
+
+.focus_right > img {
+  object-position: right;
+}
+
+/* Add modern utilities for flex and grid layouts */
+.flex {
+  display: flex;
+}
+
+.flex_col {
+  flex-direction: column;
+}
+
+.gap_sm {
+  gap: var(--space);
+}
+
+.gap_md {
+  gap: calc(var(--space) * 2);
+}
+
+.gap_lg {
+  gap: calc(var(--space) * 3);
+}
+
+.hide,
+.hidden {
+  display: none !important;
+}
+
+.hide.not {
+  display: block !important;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.center {
+  text-align: center;
+}
+
+.empty_better_hide_it_dude {
+  display: none;
+}
+
+.strikethrough {
+  text-decoration: line-through;
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+}
+
+.adv {
+  opacity: 0.5;
+  #icn_whatsapp {
+    filter: grayscale(88%);
+  }
+}
+
+@media print {
+  .print_hidden {
+    display: none !important;
+  }
+}

@@ -1,0 +1,25 @@
+/*! 🐉 404.css | MIT License */
+/* 3base.css */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  font-family: var(--font_family);
+  font-size: var(--font_size);
+  line-height: var(--line_height);
+  background: var(--surface);
+  color: var(--text);
+}
+
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+/* MIN TAP SIZE FOR ACCESSIBILTY */
+a {
+  min-height: var(--tap_size);
+}
