@@ -9,8 +9,8 @@
 Add 404.css to your project using npm or by downloading the files directly:
 
 ```bash
-# Install via pnpm - COMING SOON!
 npm install 404css --save
+pnpm install 404css --save
 ```
 
 Then include it in your HTML:
